@@ -1,4 +1,4 @@
-// src/index.js
+// src/index.js herea as the entry point
 import ReactDOM from 'react-dom/client';
 import App from './App';
 

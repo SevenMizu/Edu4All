@@ -1,0 +1,35 @@
+/* src/toastr-overrides.css */
+
+/* make text dark and bump up padding & border-radius */
+#toast-container > .toast {
+  color: #222 !important;
+  padding: 1rem !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* give each type a nicer background */
+#toast-container > .toast-success {
+  background-color: #4caf50 !important;
+}
+#toast-container > .toast-error {
+  background-color: #f44336 !important;
+}
+#toast-container > .toast-info {
+  background-color: #2196f3 !important;
+}
+#toast-container > .toast-warning {
+  background-color: #ff9800 !important;
+}
+
+/* force the icon to show up */
+#toast-container .toast-message .toast-icon {
+  display: inline-block !important;
+  margin-right: .5rem;
+}
+
+/* optional: tweak the close button */
+#toast-container .toast-close-button {
+  color: #fff !important;
+  opacity: .8;
+}

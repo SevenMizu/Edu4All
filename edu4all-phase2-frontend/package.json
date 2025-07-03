@@ -1,0 +1,83 @@
+{
+  "name": "edu4all-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:8080",
+  "dependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@tinymce/miniature": "^6.0.0",
+    "@tinymce/tinymce-react": "^6.2.0",
+    "@zoom/meetingsdk": "^3.13.2",
+    "@zoomus/websdk": "^2.18.3",
+    "axios": "^1.9.0",
+    "bootstrap": "^5.3.6",
+    "bootstrap-icons": "^1.13.1",
+    "bulma": "^1.0.4",
+    "bulma-calendar": "^7.1.1",
+    "date-fns": "^2.0.0-alpha.13",
+    "dayjs": "^1.11.13",
+    "draft-js": "^0.11.7",
+    "draftjs-to-html": "^0.9.1",
+    "framer-motion": "^12.15.0",
+    "gsap": "^3.13.0",
+    "html-to-draftjs": "^1.5.0",
+    "http-proxy-middleware": "^3.0.5",
+    "jquery": "^3.7.1",
+    "jwt-decode": "^4.0.0",
+    "magnific-popup": "^1.2.0",
+    "pdfjs-dist": "^4.10.38",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.10",
+    "react-datepicker": "^8.4.0",
+    "react-dom": "^18.2.0",
+    "react-draft-wysiwyg": "^1.15.0",
+    "react-dropzone": "^14.3.8",
+    "react-icons": "^5.5.0",
+    "react-pageflip": "^2.0.3",
+    "react-pdf": "^9.2.1",
+    "react-quill": "^2.0.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^6.30.0",
+    "react-scripts": "5.0.1",
+    "react-select": "^5.10.1",
+    "react-select-country-list": "^2.2.3",
+    "react-widgets": "^5.8.6",
+    "react-widgets-date-fns": "^5.0.20",
+    "redux": "^5.0.1",
+    "swiper": "^11.2.8",
+    "toastr": "^2.1.4",
+    "turn.js": "^1.0.5",
+    "web-vitals": "^2.1.4",
+    "workbox-core": "^7.3.0",
+    "workbox-precaching": "^7.3.0",
+    "workbox-routing": "^7.3.0",
+    "workbox-strategies": "^7.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

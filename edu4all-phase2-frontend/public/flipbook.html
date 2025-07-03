@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, user-scalable=no"
+  />
+  <title>PDF Flipbook Viewer</title>
+
+  <!-- Hide the raw config list -->
+  <style>
+    #config { display: none !important; }
+  </style>
+
+  <!-- EKIAAI CSS -->
+  <link rel="stylesheet" href="https://www.ekiaai.com/css/style.css" />
+  <link rel="stylesheet" href="https://www.ekiaai.com/css/default.css" />
+  <link rel="stylesheet" href="https://www.ekiaai.com/css/component2.css" />
+  <link rel="stylesheet" href="https://www.ekiaai.com/css/style2.css" />
+  <link rel="stylesheet" href="https://www.ekiaai.com/css/font-awesome.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  />
+</head>
+<body>
+  <!--
+    data-template="true" + a non-empty data-cat
+    forces the "shortcode" path in Ajax_v5 (i.e. it reads #config)
+  -->
+  <div
+    id="fb5-ajax"
+    class="fb5-lightbox fb5-fullbrowser"
+    data-template="true"
+    data-cat="pdf"
+    style="display:none!important"
+  >
+    <!-- hidden configuration for the flipbook -->
+    <section id="config"><ul></ul></section>
+    <div class="fb5" id="fb5"></div>
+  </div>
+
+  <!-- EKIAAI JS -->
+  <script src="https://www.ekiaai.com/js/jquery.js"></script>
+  <script src="https://www.ekiaai.com/js/jquery_no_conflict.js"></script>
+  <script src="https://www.ekiaai.com/js/turn.js"></script>
+  <script src="https://www.ekiaai.com/js/jquery.mousewheel.js"></script>
+  <script src="https://www.ekiaai.com/js/jquery.fullscreen.js"></script>
+  <script src="https://www.ekiaai.com/js/jquery.address-1.6.min.js"></script>
+  <script src="https://www.ekiaai.com/js/wait.js"></script>
+  <script src="https://www.ekiaai.com/js/pdf.js"></script>
+  <script src="https://www.ekiaai.com/js/onload.js"></script>
+  <script src="https://www.ekiaai.com/js/modernizr.custom.js"></script>
+  <script src="https://www.ekiaai.com/js/books2.js"></script>
+  <script src="https://www.ekiaai.com/js/admin/ajax-functions.js"></script>
+
+  <!-- our bootstrapper: runs after *all* the above have loaded -->
+  <script>
+    window.addEventListener("load", () => {
+      // 1) make sure the flipbook engine is actually present
+      if (typeof Ajax_v5 === "undefined") {
+        console.error("Flipbook engine (Ajax_v5) not found.");
+        return;
+      }
+
+      // 2) pull PDF URL from ?pdf=…
+      const params = new URLSearchParams(window.location.search);
+      const pdfUrl = params.get("pdf");
+      if (!pdfUrl) {
+        alert("No PDF specified in the URL.");
+        return;
+      }
+
+      // 3) fill out the hidden config list
+      document.querySelector("#config ul").innerHTML = `
+        <li key="pdf_url">${pdfUrl}</li>
+        <li key="rtl">false</li>
+        <li key="page_mode">double</li>
+        <li key="pdf_scale">2</li>
+        <li key="lazy_loading_pages">true</li>
+        <li key="lazy_loading_thumbs">true</li>
+        <li key="toolbar_visible">true</li>
+        <li key="tooltip_visible">true</li>
+        <li key="deeplinking_enabled">true</li>
+      `;
+
+      // 4) reveal the container and launch
+      document.getElementById("fb5-ajax").style.display = "block";
+      Ajax_v5.start_book_shortcode();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+/* src/components/SearchSessions.css */
+
+.session-card {
+  border: none;
+  border-radius: 0.75rem;
+}
+
+.session-image-container {
+  height: 200px;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+
+.session-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75);
+}
+
+.session-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.session-title-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.session-description {
+  font-size: 1rem;
+  line-height: 1.4;
+  min-height: 3em;
+  margin-bottom: 1rem;
+}

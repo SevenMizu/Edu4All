@@ -1,0 +1,246 @@
+/* Glass card */
+.glass-card {
+  width: 100%;              /* lock width */
+
+}
+
+
+/* Tabs */
+/* Container for tabs */
+.tab-nav {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  border-radius: 40px;
+  box-shadow: 0 4px 16px var(--tab-shadow);
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid #ccc;
+  
+}
+
+/* Individual tab button */
+.tab-btn {
+  flex: 1;
+  background: var(--tab-bg);
+  border: none;
+  border-radius: 32px;
+  padding: 0.6rem 1rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ccc;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Hover state */
+.tab-btn:hover {
+  background: var(--tab-hover);
+}
+
+/* Active state */
+.tab-btn.active {
+  background: var(--tab-active-bg);
+  color: #000;
+}
+
+/* Accent underline (animated) */
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 60%;
+  height: 3px;
+  background: var(--tab-accent);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width 0.3s, background 0.3s;
+}
+
+/* Smooth ripple on click */
+.tab-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease-out, height 0.4s ease-out, opacity 0.8s;
+  opacity: 0;
+}
+.tab-btn:active::before {
+  width: 200%; height: 200%;
+  opacity: 0.3;
+  transition: 0s;
+}
+
+/* ------- Scheduling Form Overrides ------- */
+.schedule-form {
+  background: rgba(255, 255, 255, 0.15);    /* light glass effect */
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  color: #002d3a;                            /* dark text */
+  margin: 0 auto;
+  max-width: 100%;                           /* fits inside 400px card */
+}
+
+/* Uniform spacing for each grid cell */
+.schedule-form .col-md-6,
+.schedule-form .col-md-4,
+.schedule-form .col-md-2,
+.schedule-form .col-12 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.schedule-form .form-label {
+  font-weight: 600;
+  color: #002d3a;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Inputs & textarea */
+.schedule-form .form-control,
+.schedule-form textarea {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 45, 58, 0.2);
+  border-radius: 6px;
+  padding: 0.6rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.schedule-form .form-control:focus,
+.schedule-form textarea:focus {
+  outline: none;
+  border-color: #00d1b2;
+  box-shadow: 0 0 0 3px rgba(0, 209, 178, 0.2);
+}
+
+/* Checkbox styling */
+.schedule-form .form-check-input {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.5rem;
+  accent-color: #00d1b2;
+}
+.schedule-form .form-check-label {
+  font-size: 0.95rem;
+  color: #002d3a;
+}
+
+/* Submit button */
+.schedule-form button[type="submit"] {
+
+  padding: 0.65rem 1.25rem;
+  font-size: 0.975rem;
+  font-weight: 600;
+  border-radius: 6px;
+  align-self: flex-end;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.schedule-form button[type="submit"]:hover {
+  transform: translateY(-1px);
+}
+
+/* Error message override */
+.schedule-form .alert-danger {
+  background: rgba(255, 0, 0, 0.1);
+  border-color: rgba(255, 0, 0, 0.2);
+  color: #800;
+}
+
+/* DateTime picker custom input */
+.dt-picker-wrapper {
+  width: 100%;
+}
+
+.dt-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,45,58,0.2);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.dt-input-wrapper:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(0,209,178,0.2);
+}
+
+.dt-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: #002d3a;
+  cursor: pointer;
+}
+
+.dt-input:focus {
+  outline: none;
+}
+
+.dt-icon {
+  color: var(--accent);
+  margin: 0 0.4rem;
+  pointer-events: none;
+}
+
+.dt-icon-clock {
+  margin-left: 0.2rem;
+}
+
+/* react-widgets base */
+.rw-widget {
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  color: #002d3a;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.rw-input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  padding: 0;
+}
+
+.rw-btn {
+  color: var(--accent);
+}
+
+.rw-calendar {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+/* Time list styling */
+.rw-time-list {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  max-height: 200px;
+}
+
+.session_search{
+    float: right;
+    margin-bottom: 30px;
+    width: 250px;
+}

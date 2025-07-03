@@ -1,6 +1,6 @@
 # Edu4All Frontend
 
-Edu4All is a modern educational platform frontend project built with React.
+Edu4All is a modern educational platform frontend project that is built with React.
 
 ## Tech Stack
 
